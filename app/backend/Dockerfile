@@ -2,14 +2,10 @@ FROM node:16.14-alpine
 
 WORKDIR /app-backend
 
-COPY package* ./
-
-RUN npm i --silent
-
-COPY . .
+COPY . /app-backend/
 
 EXPOSE 3001
 
-ENTRYPOINT ["npm", "run"]
+RUN npm install 
 
-CMD ["dev"]
+ENTRYPOINT [ "npm", "run", "dev" ]
