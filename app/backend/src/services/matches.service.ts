@@ -16,7 +16,24 @@ const getAllMatchesInProgress = (inProgress: boolean) => Match.findAll({
   ],
 });
 
+const newMatch = async (
+  homeTeamId: number,
+  awayTeamId: number,
+  homeTeamGoals: number,
+  awayTeamGoals: number,
+) => {
+  const match = await Match.create({
+    homeTeamId,
+    awayTeamId,
+    homeTeamGoals,
+    awayTeamGoals,
+    inProgress: true,
+  });
+  return match;
+};
+
 export default {
   getAllMatches,
   getAllMatchesInProgress,
+  newMatch,
 };
