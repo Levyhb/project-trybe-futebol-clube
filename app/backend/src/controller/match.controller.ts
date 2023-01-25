@@ -16,18 +16,25 @@ const getAllMatches = async (req: Request, res: Response) => {
 
 const newMatch = async (req: Request, res: Response) => {
   const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
+
   if (!homeTeamId || !awayTeamId || !homeTeamGoals || !awayTeamGoals) {
     return res.status(400).json({ message: 'some fields are missing' });
   }
-  const match = await matchesService
+
+  const { type, response } = await matchesService
     .newMatch(homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals);
-  return res.status(201).json(match);
+
+  if (type === 404) return res.status(type).json({ message: 'There is no team with such id!' });
+
+  return res.status(type).json(response);
 };
 
 const finishMatch = async (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const match = await matchesService.finishMatch(id);
-  if (!match) return res.status(400).json({ message: 'deu ruim' });
+
+  if (!match) return res.status(400).json({ message: 'no match found' });
+
   return res.status(200).json({ message: 'Finished' });
 };
 

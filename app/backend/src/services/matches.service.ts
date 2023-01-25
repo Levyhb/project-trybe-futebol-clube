@@ -22,6 +22,11 @@ const newMatch = async (
   homeTeamGoals: number,
   awayTeamGoals: number,
 ) => {
+  const homeTeam = await Team.findByPk(homeTeamId);
+  const awayTeam = await Team.findByPk(awayTeamId);
+
+  if (!homeTeam || !awayTeam) return { type: 404, response: 'There is no team with such id!' };
+
   const match = await Match.create({
     homeTeamId,
     awayTeamId,
@@ -29,7 +34,7 @@ const newMatch = async (
     awayTeamGoals,
     inProgress: true,
   });
-  return match;
+  return { type: 201, response: match };
 };
 
 const finishMatch = async (id: number) => {
