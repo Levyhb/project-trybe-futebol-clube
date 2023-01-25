@@ -24,7 +24,15 @@ const newMatch = async (req: Request, res: Response) => {
   return res.status(201).json(match);
 };
 
+const finishMatch = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const match = await matchesService.finishMatch(id);
+  if (!match) return res.status(400).json({ message: 'deu ruim' });
+  return res.status(200).json({ message: 'Finished' });
+};
+
 export default {
   getAllMatches,
   newMatch,
+  finishMatch,
 };

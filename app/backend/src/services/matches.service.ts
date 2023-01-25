@@ -32,8 +32,14 @@ const newMatch = async (
   return match;
 };
 
+const finishMatch = async (id: number) => {
+  const match = await Match.update({ inProgress: false }, { where: { id } });
+  return match;
+};
+
 export default {
   getAllMatches,
   getAllMatchesInProgress,
   newMatch,
+  finishMatch,
 };
