@@ -22,10 +22,6 @@ const teamsMock = [
     id: 3,
     teamName: "Botafogo"
   },
-  {
-    id: 4,
-    teamName: "Corinthians"
-  },
 ]
 
 const teamById = {

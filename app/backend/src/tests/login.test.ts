@@ -16,8 +16,6 @@ const adminUser = {
   password: 'secret_admin',
 };
 
-const tokenDecoded = {role: 'admin'};
-
 describe('Testes de integração da rota de login', () => {
   let chaiHttpResponse: Response;
 
