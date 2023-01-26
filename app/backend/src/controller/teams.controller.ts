@@ -7,14 +7,9 @@ const getAllTeams = async (req: Request, res: Response) => {
 };
 
 const getTeamById = async (req: Request, res: Response) => {
-  try {
-    const id = Number(req.params.id);
-    const team = await teamsService.getTeamById(id);
-    return res.status(200).json(team);
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
+  const id = Number(req.params.id);
+  const team = await teamsService.getTeamById(id);
+  return res.status(200).json(team);
 };
 
 export default {

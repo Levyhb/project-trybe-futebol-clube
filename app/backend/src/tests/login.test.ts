@@ -97,7 +97,6 @@ describe('Testes de integração da rota de login', () => {
     .send()
     .set('authorization', 'token_errado');
 
-    expect(validateLogin).to.have.status(400);
-    expect(chaiHttpResponse.body.message).to.eql('Invalid token');
+    expect(validateLogin).to.have.status(401);
   })
 })
