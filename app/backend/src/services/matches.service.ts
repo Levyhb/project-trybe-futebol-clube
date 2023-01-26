@@ -42,9 +42,16 @@ const finishMatch = async (id: number) => {
   return match;
 };
 
+const updateMatch = async (id: number, homeTeam: number, awayTeam: number) => {
+  const match = await Match
+    .update({ homeTeamGoals: homeTeam, awayTeamGoals: awayTeam }, { where: { id } });
+  return match;
+};
+
 export default {
   getAllMatches,
   getAllMatchesInProgress,
   newMatch,
   finishMatch,
+  updateMatch,
 };
