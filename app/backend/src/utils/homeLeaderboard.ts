@@ -9,7 +9,7 @@ const calculateTotalPoints = (match:IMatch[]) => match.map((e) => {
 const matchesResults = (match:IMatch[]) => {
   const victories = match.filter((e) => e.homeTeamGoals > e.awayTeamGoals).length;
   const draws = match.filter((e) => e.homeTeamGoals === e.awayTeamGoals).length;
-  const losses = match.filter((e) => e.homeTeamGoals === e.awayTeamGoals).length;
+  const losses = match.filter((e) => e.homeTeamGoals < e.awayTeamGoals).length;
 
   return { victories, draws, losses };
 };
