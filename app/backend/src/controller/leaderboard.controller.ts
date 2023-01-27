@@ -11,7 +11,13 @@ const getAwayTeamRanking = async (_req: Request, res: Response) => {
   res.status(200).json(team);
 };
 
+const getRanking = async (_req: Request, res: Response) => {
+  const team = await leaderboardService.getRanking();
+  res.status(200).json(team);
+};
+
 export default {
   getHomeTeamRanking,
   getAwayTeamRanking,
+  getRanking,
 };
