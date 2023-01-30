@@ -1,10 +1,21 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+# Trybe Futebol Clube
+
+O projeto TFC consiste em uma aplicação full stack sobre futebol, onde é possível ver informativos de partidas e da classificação dos times.
+
+- O Front end já foi entregue pela trybe, minha função aqui era criar o back end.
+
+## Tecnologias utilizadas
+
+- TypeScript
+- Node.js
+- MySQL
+- Express
+
+## Referências
+
+- Trybe
+
+## Autores
+
+- [@levyhb](https://github.com/Levyhb)
