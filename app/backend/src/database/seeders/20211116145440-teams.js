@@ -40,7 +40,7 @@ module.exports = {
           team_name: 'Palmeiras',
         },
         {
-          team_name: 'Real Brasília',
+          team_name: 'Fortaleza',
         },
         {
           team_name: 'Santos',

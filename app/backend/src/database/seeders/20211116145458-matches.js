@@ -42,7 +42,7 @@ module.exports = {
           home_team_id: 5,
           home_team_goals: 1,
           away_team_id: 13,
-          away_team_goals: 1,
+          away_team_goals: 2,
           in_progress: false,
         },
         {
@@ -145,7 +145,7 @@ module.exports = {
         },
         {
           home_team_id: 6,
-          home_team_goals: 3,
+          home_team_goals: 0,
           away_team_id: 13,
           away_team_goals: 1,
           in_progress: false,
@@ -334,7 +334,7 @@ module.exports = {
         },
         {
           home_team_id: 13,
-          home_team_goals: 1,
+          home_team_goals: 4,
           away_team_id: 2,
           away_team_goals: 1,
           in_progress: true,
