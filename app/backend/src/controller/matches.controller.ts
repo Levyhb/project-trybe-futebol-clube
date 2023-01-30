@@ -17,7 +17,7 @@ const getAllMatches = async (req: Request, res: Response) => {
 const newMatch = async (req: Request, res: Response) => {
   const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
 
-  if (!homeTeamId || !awayTeamId || !homeTeamGoals || !awayTeamGoals) {
+  if (!homeTeamId || !awayTeamId) {
     return res.status(400).json({ message: 'some fields are missing' });
   }
 
